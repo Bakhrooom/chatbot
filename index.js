@@ -6,7 +6,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 bot.start((ctx) => onstart(ctx))
 bot.help((ctx) => help(ctx))
 bot.on('sticker', (ctx) => stic(ctx))
-bot.hears('hi', (ctx) => ctx.reply('hello'))
+bot.hears('hi', (ctx) => ctx.reply(ctx.message))
 
 bot.command('course', async (ctx) => {
     try {
